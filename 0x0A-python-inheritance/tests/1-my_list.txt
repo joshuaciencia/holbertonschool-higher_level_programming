@@ -1,0 +1,35 @@
+# test basic usage
+>>> MyList = __import__('1-my_list').MyList
+>>> l = MyList()
+>>> l.append(11)
+>>> l.append(5)
+>>> l.append(7)
+>>> l.append(1)
+>>> print(l)
+[11, 5, 7, 1]
+
+# test if the the list is printed sorted in ascending order
+>>> l.print_sorted()
+[1, 5, 7, 11]
+
+# test if the list didn't change
+>>> print(l)
+[11, 5, 7, 1]
+
+# test when passing an argument to print_sorted()
+>>> l.print_sorted(list())
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+# test list with negative numbers
+>>> l = MyList()
+>>> l.append(-10)
+>>> l.append(-1)
+>>> l.append(3)
+>>> l.print_sorted()
+[-10, -1, 3]
+
+# test with empty list
+>>> l = MyList()
+>>> l.print_sorted()
+[]
