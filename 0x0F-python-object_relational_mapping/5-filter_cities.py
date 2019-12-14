@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+"""
+takes the name of a state and list all cities
+"""
 if __name__ == '__main__':
-    import MySQLdb, sys
-    db = MySQLdb.connect(host='localhost',
-        user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    import MySQLdb
+    import sys
+    db = MySQLdb.connect(
+            host='localhost',
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3], port=3306)
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM states\
             LEFT JOIN cities ON states.id = cities.state_id\
