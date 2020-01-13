@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-returns the specified header request"""
+returns the specified header request
+"""
 import os
 import urllib.request as u
 
