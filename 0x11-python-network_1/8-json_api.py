@@ -19,7 +19,7 @@ if __name__ == '__main__':
     try:
         json = req.json()
         if not len(json):
-            print("Not result")
+            print("No result")
         else:
             print("[{}] {}".format(json.get('id'), json.get('name')))
     except Exception as e:
