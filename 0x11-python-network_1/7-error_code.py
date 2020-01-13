@@ -12,4 +12,4 @@ if __name__ == '__main__':
     if code == 200:
         print(req.content.decode('utf-8'))
     else:
-        print(code)
+        print("Error code: {}".format(code))
