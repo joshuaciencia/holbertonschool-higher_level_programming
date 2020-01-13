@@ -14,11 +14,10 @@ if __name__ == '__main__':
     data = {
         'q': q
     }
-    req = requests.post('http://fb67ecd083dd.19.hbtn-cod.io:\
-5000/search_user', data)
+    req = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
         json = req.json()
-        if not len(json):
+        if not json:
             print("No result")
         else:
             print("[{}] {}".format(json.get('id'), json.get('name')))
