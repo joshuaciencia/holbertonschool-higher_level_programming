@@ -10,8 +10,7 @@ if __name__ == '__main__':
     url = 'https://swapi.co/api/people/?search={}'.format(argv[1])
     req = requests.get(url)
     print('Number of results: {}'.format(req.json().get('count')))
-    while url:
-        req = requests.get(url)
+    while True:
         l = req.json().get('results')
         for item in l:
             if 'name' in item:
@@ -22,3 +21,6 @@ if __name__ == '__main__':
                     title = r.json().get('title')
                     print("\t{}".format(title))
         url = req.json().get('next')
+        if not url:
+            True
+        req = requests.get(url)
