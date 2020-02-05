@@ -9,4 +9,3 @@ function factorial (val) {
   return val * factorial(val - 1);
 }
 console.log(factorial(num, num - 1));
-
