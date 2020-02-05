@@ -2,15 +2,11 @@
 const arg = process.argv;
 const num = parseInt(arg[2]);
 
-function factorial (val, i) {
-  if (i <= 1) {
-    return (val);
+function factorial (val) {
+  if (!val || val <= 1) {
+    return 1;
   }
-  return (factorial(val * i, i - 1));
+  return val * factorial(val - 1);
 }
+console.log(factorial(num, num - 1));
 
-if (!num) {
-  console.log(1);
-} else {
-  console.log(factorial(num, num - 1));
-}
